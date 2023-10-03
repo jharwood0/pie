@@ -151,7 +151,9 @@ export class PieCardContainer extends LitElement implements CardContainerProps {
     static styles = unsafeCSS(styles);
 }
 
-customElements.define(componentSelector, PieCardContainer);
+if (!customElements.get(componentSelector)) {
+    customElements.define(componentSelector, PieCardContainer);
+}
 
 declare global {
     interface HTMLElementTagNameMap {

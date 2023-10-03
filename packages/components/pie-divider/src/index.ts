@@ -35,7 +35,9 @@ export class PieDivider extends LitElement implements DividerProps {
     static styles = unsafeCSS(styles);
 }
 
-customElements.define(componentSelector, PieDivider);
+if (!customElements.get(componentSelector)) {
+    customElements.define(componentSelector, PieDivider);
+}
 
 declare global {
     interface HTMLElementTagNameMap {

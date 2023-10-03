@@ -43,7 +43,9 @@ export class PieFormLabel extends LitElement implements FormLabelProps {
     static styles = unsafeCSS(styles);
 }
 
-customElements.define(componentSelector, PieFormLabel);
+if (!customElements.get(componentSelector)) {
+    customElements.define(componentSelector, PieFormLabel);
+}
 
 declare global {
     interface HTMLElementTagNameMap {

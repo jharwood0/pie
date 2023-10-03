@@ -77,7 +77,9 @@ export class PieButton extends LitElement implements ButtonProps {
     static styles = unsafeCSS(styles);
 }
 
-customElements.define(componentSelector, PieButton);
+if (!customElements.get(componentSelector)) {
+    customElements.define(componentSelector, PieButton);
+}
 
 declare global {
     interface HTMLElementTagNameMap {

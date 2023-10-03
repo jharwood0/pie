@@ -144,7 +144,9 @@ export class PieLink extends LitElement implements LinkProps {
     static styles = unsafeCSS(styles);
 }
 
-customElements.define(componentSelector, PieLink);
+if (!customElements.get(componentSelector)) {
+    customElements.define(componentSelector, PieLink);
+}
 
 declare global {
     interface HTMLElementTagNameMap {

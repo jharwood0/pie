@@ -44,7 +44,9 @@ export class PieIconButton extends LitElement implements IconButtonProps {
     static styles = unsafeCSS(styles);
 }
 
-customElements.define(componentSelector, PieIconButton);
+if (!customElements.get(componentSelector)) {
+    customElements.define(componentSelector, PieIconButton);
+}
 
 declare global {
     interface HTMLElementTagNameMap {

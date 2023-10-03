@@ -114,7 +114,9 @@ export class PieToggleSwitch extends RtlMixin(LitElement) implements ToggleSwitc
     }
 }
 
-customElements.define(componentSelector, PieToggleSwitch);
+if (!customElements.get(componentSelector)) {
+    customElements.define(componentSelector, PieToggleSwitch);
+}
 
 declare global {
     interface HTMLElementTagNameMap {

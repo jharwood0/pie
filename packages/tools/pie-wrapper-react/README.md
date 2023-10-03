@@ -32,7 +32,11 @@ import { PieButton } from '@justeattakeaway/pie-button/dist/react'
 
 When constructing your web component, please reference the `componentSelector` variable and component class to define your custom element to have consistent identifiers across the component. For example:
 
-`customElements.define(componentSelector, PieIconButton);`
+```js
+if (!customElements.get(componentSelector)) {
+    customElements.define(componentSelector, PieIconButton);
+}
+```
 
 Alternatively, you can define your custom element with a string and component class directly. For example
 

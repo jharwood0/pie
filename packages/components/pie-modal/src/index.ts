@@ -452,7 +452,9 @@ export class PieModal extends RtlMixin(LitElement) implements ModalProps {
     };
 }
 
-customElements.define(componentSelector, PieModal);
+if (!customElements.get(componentSelector)) {
+    customElements.define(componentSelector, PieModal);
+}
 
 declare global {
     interface HTMLElementTagNameMap {
